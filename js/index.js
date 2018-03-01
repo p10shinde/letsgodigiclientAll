@@ -379,7 +379,7 @@ window.onload = function(){
 						console.log('channel 2 updated')
 						$("#contentList li").removeClass('ellip-line-active')
 						$.map($("#contentList li"),function(key,val){
-							if(key.innerText == secondChannelData.resName.split("_")[0]) $(key).addClass('ellip-line-active')
+							if(key.innerText == '101') $(key).addClass('ellip-line-active')
 						})
 						if(getResType(secondChannelData.resName) == "image"){
 							$("." + app.visibleCampaign + " .contentHolder2").empty();
@@ -638,6 +638,7 @@ window.onload = function(){
 	          	app.ifLoginRequested = true;
 			    app.authorizeUser();
 			  }
+			  secondll.add('101', 5);
 	          	secondll = new CircularList();
 		          	querySnapshot.forEach(function(doc) {
 		              	value = doc.data();
@@ -671,6 +672,7 @@ window.onload = function(){
 			    app.authorizeUser();
 			  }
 	          secondllSH1 = new CircularList();
+
 		            querySnapshot.forEach(function(doc) {
 		               value = doc.data();
 		               if(typeof(value.resName.split("_")[0]) != 'undefined')
@@ -693,6 +695,7 @@ window.onload = function(){
 			  }
 			  // listItem = "<li>heelo.jpg</li><li>aksd.jpg</li><li>kwehfiwjef.jpg</li>"
 	          secondllSH2 = new CircularList();
+	          listItem2 += "<li>" + '101' + "</li>"
 	          		querySnapshot.forEach(function(doc) {
 	              		value = doc.data();
 	              		if(typeof(value.resName.split("_")[0]) != 'undefined')

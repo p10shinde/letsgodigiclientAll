@@ -119,17 +119,21 @@ function getFileBasedOnTime(channel,time,callback){
 
   if(channel == "ch2_p" || channel == "fs"){// || channel == "ch3_p")
     docRef = firebase.firestore().collection(channel).doc(app.groupName).collection('data').doc(time.split("_")[1]);
-    // $(".contentHolder2").parent().parent().parent().addClass('col-xs-12')
-    // $(".contentHolder2").parent().parent().parent().removeClass('col-xs-11-custom')
-    // $(".contentHolder2").parent().parent().parent().removeClass('col-xs-11')
+    if(app.orientation == "v"){
+      $(".contentHolder2").parent().parent().parent().addClass('col-xs-12')
+      $(".contentHolder2").parent().parent().parent().removeClass('col-xs-11-custom')
+      $(".contentHolder2").parent().parent().parent().removeClass('col-xs-11')
+    }
 
   }
 
   if(channel == "ch2_sh1" || channel == "ch2_sh2"){// || channel == "ch3_sh1" || channel == 'ch3_sh2')
       docRef = firebase.firestore().collection(channel).doc(app.groupName).collection('data');
-      // $(".contentHolder2").parent().parent().parent().addClass('col-xs-11')
-      // $(".contentHolder2").parent().parent().parent().addClass('col-xs-11-custom')
-      // $(".contentHolder2").parent().parent().parent().removeClass('col-xs-12')
+      if(app.orientation == "v"){
+        $(".contentHolder2").parent().parent().parent().addClass('col-xs-11')
+        $(".contentHolder2").parent().parent().parent().addClass('col-xs-11-custom')
+        $(".contentHolder2").parent().parent().parent().removeClass('col-xs-12')
+      }
   }
   
 
